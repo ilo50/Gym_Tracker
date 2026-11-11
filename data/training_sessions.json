@@ -1,0 +1,28 @@
+{
+    "training_sessions": [
+        {
+            "session_nr": 1,
+            "date": "2026-11-10",
+            "exercises": [
+                {
+                    "exercise": "Sitting shoulder press with dumbbells",
+                    "type" : "shoulder",
+                    "sets": [
+                        {
+                            "weight": 10,
+                            "reps": 8
+                        },
+                        {
+                            "weight": 12,
+                            "reps": 8
+                        },
+                        {
+                            "weight": 12,
+                            "reps": 6
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
