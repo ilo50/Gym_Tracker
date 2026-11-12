@@ -2,23 +2,23 @@
     "training_sessions": [
         {
             "session_nr": 1,
-            "date": "2026-11-10",
+            "type": "pull",
+            "date": "2026-11-12",
             "exercises": [
                 {
-                    "exercise": "Sitting shoulder press with dumbbells",
-                    "type" : "shoulder",
+                    "exercise_name": "tset",
                     "sets": [
                         {
-                            "weight": 10,
-                            "reps": 8
+                            "weight": 20,
+                            "reps": 10
                         },
                         {
-                            "weight": 12,
-                            "reps": 8
+                            "weight": 20,
+                            "reps": 10
                         },
                         {
-                            "weight": 12,
-                            "reps": 6
+                            "weight": 20,
+                            "reps": 10
                         }
                     ]
                 }

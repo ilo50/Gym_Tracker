@@ -1,25 +1,18 @@
 {
     "exercises": [
         {
-            "type" : "pull",
-            "names" : [
-                    "bicep curl",
-                    "lat pulldown"
+            "type": "pull",
+            "names": [
+                "tset"
             ]
         },
-{
-            "type" : "push",
-            "names" : [
-                    "pec flys",
-                    "benchpress"
-            ]
+        {
+            "type": "push",
+            "names": []
         },
-{
-            "type" : "legs",
-            "names" : [
-                    "leg extension",
-                    "squat"
-            ]
+        {
+            "type": "legs",
+            "names": []
         }
     ]
 }
