@@ -8,7 +8,9 @@
         },
         {
             "type": "push",
-            "names": []
+            "names": [
+                "f"
+            ]
         },
         {
             "type": "legs",

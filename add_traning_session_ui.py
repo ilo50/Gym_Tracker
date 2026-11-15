@@ -5,9 +5,8 @@ import json_functions.json_functions_sessions as jf_session
 
 import navigation as nav
 
-def home():
 
-    st.button("Add session", on_click=nav.go_to_add_new_session)
+
 
 def select_exercise_type():
     

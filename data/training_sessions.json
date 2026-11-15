@@ -23,6 +23,78 @@
                     ]
                 }
             ]
+        },
+        {
+            "session_nr": 2,
+            "type": "pull",
+            "date": "2026-11-15",
+            "exercises": [
+                {
+                    "exercise_name": "tset",
+                    "sets": [
+                        {
+                            "weight": 102,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 180,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "session_nr": 3,
+            "type": "push",
+            "date": "2026-11-15",
+            "exercises": [
+                {
+                    "exercise_name": "f",
+                    "sets": [
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "session_nr": 4,
+            "type": "pull",
+            "date": "2026-11-15",
+            "exercises": [
+                {
+                    "exercise_name": "tset",
+                    "sets": [
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

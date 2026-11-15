@@ -1,5 +1,7 @@
 import streamlit as st
-import page_ui as ui
+
+import add_traning_session_ui as add_session
+import home_ui as home
 
 # init
 if "page" not in st.session_state:
@@ -7,10 +9,10 @@ if "page" not in st.session_state:
 
 # dictionary that maps a page name to a function
 PAGES = {
-    "home": ui.home,
-    "add_new_session_form": ui.add_new_session_form,
-    "select_exercise_type": ui.select_exercise_type,
-    "select_weight_and_reps": ui.select_weight_and_reps,
+    "home": home.home,
+    "add_new_session_form": add_session.add_new_session_form,
+    "select_exercise_type": add_session.select_exercise_type,
+    "select_weight_and_reps": add_session.select_weight_and_reps,
 }
 
 PAGES[st.session_state.page]()
