@@ -33,3 +33,50 @@ def load_training_session():
 
     with open("data/training_sessions.json", "r", encoding="utf-8") as file:
         return json.load(file)
+
+def get_training_sessions(amount, filter):
+
+    data = load_training_session()
+    all_sessions = data["training_sessions"]
+
+    if filter == "all":
+        
+        return all_sessions[-amount:] if amount > 0 else []
+
+    else:
+        
+        filtered_sessions = [s for s in all_sessions if s["type"] == filter] 
+        
+        return filtered_sessions[-amount:] if amount > 0 else []
+
+def get_session_volume(session):
+    # return weight * reps for all exercises in 
+    return sum(
+        s["weight"] * s["reps"]
+        for ex in session["exercises"]
+        for s in ex["sets"]
+    )
+
+def get_session_by_date(date : str, filter): 
+
+    data = load_training_session()
+    all_sessions = data["training_sessions"]
+    
+    if filter == "all":
+            
+        for session in all_sessions:
+
+            if session["date"] == date:
+
+                return session
+    else:
+            
+        filtered_sessions = [s for s in all_sessions if s["type"] == filter] 
+            
+        for session in filtered_sessions: 
+
+            if session["date"] == date:
+
+                return session
+
+

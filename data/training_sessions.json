@@ -51,7 +51,7 @@
         {
             "session_nr": 3,
             "type": "push",
-            "date": "2026-11-15",
+            "date": "2026-11-17",
             "exercises": [
                 {
                     "exercise_name": "f",
@@ -75,7 +75,7 @@
         {
             "session_nr": 4,
             "type": "pull",
-            "date": "2026-11-15",
+            "date": "2026-11-19",
             "exercises": [
                 {
                     "exercise_name": "tset",
@@ -91,6 +91,126 @@
                         {
                             "weight": 20,
                             "reps": 10
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "session_nr": 5,
+            "type": "pull",
+            "date": "2026-11-22",
+            "exercises": [
+                {
+                    "exercise_name": "tset",
+                    "sets": [
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "session_nr": 6,
+            "type": "legs",
+            "date": "2026-11-23",
+            "exercises": [
+                {
+                    "exercise_name": "dadad",
+                    "sets": [
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "session_nr": 7,
+            "type": "push",
+            "date": "2026-11-25",
+            "exercises": [
+                {
+                    "exercise_name": "f",
+                    "sets": [
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "session_nr": 8,
+            "type": "push",
+            "date": "2026-11-26",
+            "exercises": [
+                {
+                    "exercise_name": "f",
+                    "sets": [
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 198,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "session_nr": 9,
+            "type": "pull",
+            "date": "2026-11-28",
+            "exercises": [
+                {
+                    "exercise_name": "tset",
+                    "sets": [
+                        {
+                            "weight": 20,
+                            "reps": 3
+                        },
+                        {
+                            "weight": 20,
+                            "reps": 19
+                        },
+                        {
+                            "weight": 134,
+                            "reps": 16
                         }
                     ]
                 }

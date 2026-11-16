@@ -17,7 +17,10 @@ def select_exercise_type():
     accept_new_options=True
     )
     new_exercises = [name for name in exercises if name not in result] # if new exercise is added, put in exercises.json
-    st.button("Done", on_click=nav.go_to_select_weight_and_reps, args=(exercises,new_exercises), disabled=not exercises)
+
+    with st.container(horizontal=True):
+            st.button("Done", on_click=nav.go_to_select_weight_and_reps, args=(exercises,new_exercises), disabled=not exercises)
+            st.button("Cancel", on_click=nav.go_to_home)
 
 def add_new_session_form():
 
@@ -26,7 +29,9 @@ def add_new_session_form():
     "Select workout type",
     ("push", "pull", "legs"), 
     )
-    st.button(key="session_form_button", label="Done", on_click=nav.go_to_select_exercises, args=(workout_type,))
+    with st.container(horizontal=True):
+        st.button(key="session_form_button", label="Done", on_click=nav.go_to_select_exercises, args=(workout_type,))
+        st.button("Cancel", on_click=nav.go_to_home)
 
 def next_exercise(exercise, sets_data):
 
@@ -91,5 +96,6 @@ def select_weight_and_reps():
                         )
 
         set_data.append({"weight": weight, "reps": reps})
-
-    st.button(key="session_form_button", label="Done", on_click=next_exercise, args=(exercise, set_data))
+    with st.container(horizontal=True):
+        st.button(key="session_form_button", label="Done", on_click=next_exercise, args=(exercise, set_data))
+        st.button("Cancel", on_click=nav.go_to_home)

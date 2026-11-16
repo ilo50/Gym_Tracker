@@ -14,7 +14,9 @@
         },
         {
             "type": "legs",
-            "names": []
+            "names": [
+                "dadad"
+            ]
         }
     ]
 }
