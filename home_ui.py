@@ -13,7 +13,7 @@ def home():
     if "session_filter" not in st.session_state: 
             st.session_state.session_filter = "all" 
 
-    if "show_details_of_session" not in st.session_state:
+    if "show_details_of_session" not in st.session_state: # default session is most recent
             most_recent_session_date = jfs.get_training_sessions(1, st.session_state.session_filter)[0]["date"]
             st.session_state.show_details_of_session = most_recent_session_date
 

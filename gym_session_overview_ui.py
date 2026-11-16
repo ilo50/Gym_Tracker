@@ -46,9 +46,21 @@ def training_overview():
     interval = selection.get("interval_selection", {})
 
     if points:
+        
         point = points[0]
-        date = point["dates"]
-        st.session_state.show_details_of_session = date
+
+        if "most_recent_point" not in st.session_state: 
+            st.session_state.most_recent_point = point 
+
+        if st.session_state.most_recent_point != point:
+
+            date = point["dates"]
+            date_str = pd.to_datetime(date, unit="ms", utc=True).tz_convert("Europe/Stockholm").strftime("%Y-%m-%d")
+            st.session_state.show_details_of_session = date_str
+        
+
+    st.write(st.session_state.show_details_of_session)
+    st.write(st.session_state.session_filter)
 
     selected_session = jf_se.get_session_by_date(st.session_state.show_details_of_session, st.session_state.session_filter)
 
