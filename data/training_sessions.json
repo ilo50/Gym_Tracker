@@ -71,6 +71,54 @@
                     ]
                 }
             ]
+        },
+        {
+            "session_nr": 4,
+            "type": "pull",
+            "date": "2026-11-17",
+            "exercises": [
+                {
+                    "exercise_name": "exercise_1",
+                    "sets": [
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "session_nr": 5,
+            "type": "push",
+            "date": "2026-11-17",
+            "exercises": [
+                {
+                    "exercise_name": "exercise_1",
+                    "sets": [
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 33,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 68,
+                            "reps": 10
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

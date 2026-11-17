@@ -1,6 +1,7 @@
 import pandas as pd
 import streamlit as st
 import json_functions.json_functions_sessions as jf_se
+from datetime import date as datetime
 
 def training_overview():
 
@@ -78,14 +79,23 @@ def training_overview():
     selected_session = jf_se.get_session_by_date(st.session_state.show_details_of_session, st.session_state.session_filter)
 
     exercise_names = [exercises["exercise_name"] for exercises in selected_session["exercises"]]
+    timestamps = []
 
-    timestamps = {"934859384u5"}
+    for name in exercise_names: 
+        timestamp = jf_se.last_performed(name, st.session_state.show_details_of_session, st.session_state.session_filter)
+        timestamps.append(timestamp)
+
+    last_performed_info = [
+    f"{(datetime.today() - datetime.fromisoformat(stamp)).days} days ago"
+    if stamp is not None else None
+    for stamp in timestamps
+]
     
     st.write("Last session details")
     df = pd.DataFrame(
             {
                 "Name": exercise_names,
-                "Last Performed": timestamps,
+                "Last Performed": last_performed_info,
                 
             }
     )
@@ -98,5 +108,3 @@ def training_overview():
             },
             hide_index=True,
     )
-
-    

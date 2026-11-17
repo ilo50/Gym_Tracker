@@ -34,7 +34,7 @@ def load_training_session():
     with open("data/training_sessions.json", "r", encoding="utf-8") as file:
         return json.load(file)
 
-def get_training_sessions(amount, filter):
+def get_training_sessions(amount, filter): 
 
     data = load_training_session()
     all_sessions = data["training_sessions"]
@@ -48,6 +48,21 @@ def get_training_sessions(amount, filter):
         filtered_sessions = [s for s in all_sessions if s["type"] == filter] 
         
         return filtered_sessions[-amount:] if amount > 0 else []
+
+def get_all_training_sessions(filter): 
+
+    data = load_training_session()
+    all_sessions = data["training_sessions"]
+
+    if filter == "all":
+        
+        return all_sessions
+
+    else:
+        
+        filtered_sessions = [s for s in all_sessions if s["type"] == filter] 
+        
+        return filtered_sessions
 
 def get_session_volume(session):
     # return weight * reps for all exercises in 
@@ -78,5 +93,26 @@ def get_session_by_date(date : str, filter):
             if session["date"] == date:
 
                 return session
+
+def last_performed(name, date, filter): # returns most recent date that {name} exercise occurs prior to {date}
+
+    filtered_sessions_type = get_all_training_sessions(filter)
+
+    # only get the sessions that are before current date
+    filtered_sessions_date = [s for s in filtered_sessions_type if s["date"] < date] 
+
+    # reverse to get newest first
+    for session in reversed(filtered_sessions_date): 
+
+        for ex in session["exercises"]:
+
+            if ex["exercise_name"] == name:
+
+                return session["date"]
+
+
+
+
+
 
 
