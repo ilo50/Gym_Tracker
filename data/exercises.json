@@ -3,19 +3,19 @@
         {
             "type": "pull",
             "names": [
-                "tset"
+                "exercise_1"
             ]
         },
         {
             "type": "push",
             "names": [
-                "f"
+                "exercise_1"
             ]
         },
         {
             "type": "legs",
             "names": [
-                "dadad"
+                "exercise_1"
             ]
         }
     ]

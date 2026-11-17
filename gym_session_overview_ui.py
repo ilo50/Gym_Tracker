@@ -1,7 +1,6 @@
 import pandas as pd
 import streamlit as st
 import json_functions.json_functions_sessions as jf_se
-from numpy.random import default_rng as rng
 
 def training_overview():
 
@@ -20,15 +19,21 @@ def training_overview():
 
     spec = {
         "mark": {"type": "circle", "size": 200, "tooltip": True},
-        "params": [
-            {"name": "interval_selection", "select": "interval"},
-            {"name": "point_selection", "select": "point"},
+        "params": [{"name": "interval_selection", "select": "interval"},
+            {
+            "name": "point_selection",
+            "select": {
+                    "type": "point",
+                    "fields": ["dates"],
+                    "toggle": False,
+                    "clear": "dblclick"
+                    }
+            },
         ],
         "encoding": {
             "x": {"field": "dates", "type": "temporal"},
             "y": {"field": "volume", "type": "quantitative"},
-            "color": {"field": "session_type", "type": "nominal", "legend":None},
-            "fillOpacity": {
+            "color": {"field": "session_type", "type": "nominal", "legend":None}, "fillOpacity": {
                 "condition": {"param": "point_selection", "value": 1},
                 "value": 1,
             },
@@ -45,18 +50,30 @@ def training_overview():
 
     interval = selection.get("interval_selection", {})
 
-    if points:
+    if points: # when point is selected on graph 
         
         point = points[0]
 
         if "most_recent_point" not in st.session_state: 
             st.session_state.most_recent_point = point 
 
-        if st.session_state.most_recent_point != point:
+            date = point["dates"]
+            date_str = pd.to_datetime(date, unit="ms", utc=True).tz_convert("Europe/Stockholm").strftime("%Y-%m-%d")
 
+            st.write(f"initial point pressed with date: {date_str}")
+            st.session_state.show_details_of_session = date_str
+
+
+
+        if st.session_state.most_recent_point != point:
+            
             date = point["dates"]
             date_str = pd.to_datetime(date, unit="ms", utc=True).tz_convert("Europe/Stockholm").strftime("%Y-%m-%d")
             st.session_state.show_details_of_session = date_str
+
+            st.write(f"new point pressed, with date: {date_str}")
+
+            st.session_state.most_recent_point = point
         
 
     st.write(st.session_state.show_details_of_session)
