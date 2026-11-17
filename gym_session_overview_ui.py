@@ -75,19 +75,17 @@ def training_overview():
 
             st.session_state.most_recent_point = point
         
-
-    st.write(st.session_state.show_details_of_session)
-    st.write(st.session_state.session_filter)
-
     selected_session = jf_se.get_session_by_date(st.session_state.show_details_of_session, st.session_state.session_filter)
 
     exercise_names = [exercises["exercise_name"] for exercises in selected_session["exercises"]]
 
+    timestamps = {"934859384u5"}
     
     st.write("Last session details")
     df = pd.DataFrame(
             {
-                "name": exercise_names,
+                "Name": exercise_names,
+                "Last Performed": timestamps,
                 
             }
     )
@@ -95,8 +93,8 @@ def training_overview():
     st.dataframe(
             df,
             column_config={
-                "name": "Exercise name",
-                
+                "Name": "Exercise name",
+                "Last Performed": "Last Performed",
             },
             hide_index=True,
     )
