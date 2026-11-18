@@ -49,7 +49,9 @@ def get_training_sessions(amount, filter):
         
         return filtered_sessions[-amount:] if amount > 0 else []
 
-def get_all_training_sessions(filter): 
+def get_all_training_sessions(filter="all"): 
+
+    '''return all sessions, with possibility of filtering by type'''
 
     data = load_training_session()
     all_sessions = data["training_sessions"]
@@ -110,9 +112,21 @@ def last_performed(name, date, filter): # returns most recent date that {name} e
 
                 return session["date"]
 
+def return_history(session_type, exercise_name):
+    '''Takes a name of an exercise and returns a list of the volume of past it in past sessions'''
 
+    sessions = get_all_training_sessions(session_type)
 
+    past_volumes = []
 
+    # reverse to get newest first
+    for session in reversed(sessions): 
 
+        for ex in session["exercises"]:
 
+            if ex["exercise_name"] == exercise_name:
 
+                volume = sum(s["weight"] * s["reps"] for s in ex["sets"]) 
+                past_volumes.append(volume)
+
+    return past_volumes

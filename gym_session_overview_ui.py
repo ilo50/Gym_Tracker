@@ -41,11 +41,11 @@ def training_overview():
         },
     }
 
-    event = st.vega_lite_chart(df, spec, key="vega_chart", on_select="rerun")
+    session_event = st.vega_lite_chart(df, spec, key="vega_chart", on_select="rerun")
 
-    event
+    session_event
 
-    selection = event.selection
+    selection = session_event.selection
 
     points = selection.get("point_selection", [])
 
@@ -61,10 +61,10 @@ def training_overview():
             date = point["dates"]
             date_str = pd.to_datetime(date, unit="ms", utc=True).tz_convert("Europe/Stockholm").strftime("%Y-%m-%d")
 
-            st.write(f"initial point pressed with date: {date_str}")
             st.session_state.show_details_of_session = date_str
 
-
+            # debug
+            # st.write(f"initial point pressed with date: {date_str}")
 
         if st.session_state.most_recent_point != point:
             
@@ -72,39 +72,70 @@ def training_overview():
             date_str = pd.to_datetime(date, unit="ms", utc=True).tz_convert("Europe/Stockholm").strftime("%Y-%m-%d")
             st.session_state.show_details_of_session = date_str
 
-            st.write(f"new point pressed, with date: {date_str}")
-
             st.session_state.most_recent_point = point
-        
+
+            # debug
+            #st.write(f"new point pressed, with date: {date_str}")
+
+    # current session and type
     selected_session = jf_se.get_session_by_date(st.session_state.show_details_of_session, st.session_state.session_filter)
+    selected_session_type = selected_session["type"]
 
+    # get all exercises names of selected session
     exercise_names = [exercises["exercise_name"] for exercises in selected_session["exercises"]]
-    timestamps = []
 
+    timestamps = []
+    volume_history = []
+    # get timestamps for when each exercise was last performed
+    # get past volumes for each exercise
     for name in exercise_names: 
         timestamp = jf_se.last_performed(name, st.session_state.show_details_of_session, st.session_state.session_filter)
         timestamps.append(timestamp)
 
+        volume_history.append(jf_se.return_history(selected_session_type, name))
+
+    
+    # info as a str with the time since last performed
     last_performed_info = [
-    f"{(datetime.today() - datetime.fromisoformat(stamp)).days} days ago"
+    f"{(datetime.fromisoformat(st.session_state.show_details_of_session) - datetime.fromisoformat(stamp)).days} days ago"
     if stamp is not None else None
     for stamp in timestamps
-]
+    ]
+
     
-    st.write("Last session details")
+
+
+    #debug
+    #st.write(len(exercise_names), len(last_performed_info), len(volume_history))
+    
+    st.write(f"Details of {selected_session_type} session from {st.session_state.show_details_of_session}")
     df = pd.DataFrame(
             {
                 "Name": exercise_names,
                 "Last Performed": last_performed_info,
-                
+                "History": volume_history,
             }
     )
     
-    st.dataframe(
+    exercise_event = st.dataframe(
             df,
             column_config={
-                "Name": "Exercise name",
+                "Name": "Exercise name \n (Press for details)",
                 "Last Performed": "Last Performed",
+                "History": st.column_config.LineChartColumn(
+                "Past performance", y_min=0, y_max=40, 
+                ),
             },
             hide_index=True,
+            on_select="rerun",
+            selection_mode="single-cell"
     )
+
+    if exercise_event.selection.cells:
+        idx, name = exercise_event.selection.cells[0]
+        st.write(idx, name)
+
+        if (name == "Name"):
+
+            # show details
+    

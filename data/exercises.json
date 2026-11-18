@@ -3,7 +3,10 @@
         {
             "type": "pull",
             "names": [
-                "exercise_1"
+                "exercise_1",
+                "f",
+                "d",
+                "c"
             ]
         },
         {
@@ -15,7 +18,8 @@
         {
             "type": "legs",
             "names": [
-                "exercise_1"
+                "exercise_1",
+                "#egsgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg"
             ]
         }
     ]

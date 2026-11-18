@@ -27,7 +27,7 @@
         {
             "session_nr": 2,
             "type": "pull",
-            "date": "2026-11-15",
+            "date": "2026-11-13",
             "exercises": [
                 {
                     "exercise_name": "exercise_1",
@@ -51,7 +51,7 @@
         {
             "session_nr": 3,
             "type": "legs",
-            "date": "2026-11-17",
+            "date": "2026-11-14",
             "exercises": [
                 {
                     "exercise_name": "exercise_1",
@@ -75,7 +75,7 @@
         {
             "session_nr": 4,
             "type": "pull",
-            "date": "2026-11-17",
+            "date": "2026-11-15",
             "exercises": [
                 {
                     "exercise_name": "exercise_1",
@@ -99,7 +99,7 @@
         {
             "session_nr": 5,
             "type": "push",
-            "date": "2026-11-17",
+            "date": "2026-11-16",
             "exercises": [
                 {
                     "exercise_name": "exercise_1",
@@ -114,6 +114,109 @@
                         },
                         {
                             "weight": 68,
+                            "reps": 10
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "session_nr": 6,
+            "type": "legs",
+            "date": "2026-11-18",
+            "exercises": [
+                {
+                    "exercise_name": "#egsgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg",
+                    "sets": [
+                        {
+                            "weight": 80,
+                            "reps": 15
+                        },
+                        {
+                            "weight": 101,
+                            "reps": 21
+                        },
+                        {
+                            "weight": 115,
+                            "reps": 12
+                        },
+                        {
+                            "weight": 115,
+                            "reps": 13
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "session_nr": 7,
+            "type": "pull",
+            "date": "2026-11-19",
+            "exercises": [
+                {
+                    "exercise_name": "exercise_1",
+                    "sets": [
+                        {
+                            "weight": 61,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        }
+                    ]
+                },
+                {
+                    "exercise_name": "f",
+                    "sets": [
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        }
+                    ]
+                },
+                {
+                    "exercise_name": "d",
+                    "sets": [
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 78,
+                            "reps": 10
+                        }
+                    ]
+                },
+                {
+                    "exercise_name": "c",
+                    "sets": [
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 249,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 20,
                             "reps": 10
                         }
                     ]
