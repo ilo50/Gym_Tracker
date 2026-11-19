@@ -20,3 +20,5 @@ def go_to_select_exercises(workout_type):
 def go_to_home():
     st.session_state.page = "home"
 
+def go_to_exercise_details():
+    st.session_state.page = "exercise_details"

@@ -2,6 +2,8 @@ import json
 from datetime import date
 from pathlib import Path
 
+import streamlit as st
+
 def write_training_session(data):
     with open("data/training_sessions.json", "w", encoding="utf-8") as file:
         json.dump(data, file, indent=4, ensure_ascii=False)
@@ -74,7 +76,7 @@ def get_session_volume(session):
         for s in ex["sets"]
     )
 
-def get_session_by_date(date : str, filter): 
+def get_session_by_date(adate : str, filter): 
 
     data = load_training_session()
     all_sessions = data["training_sessions"]
@@ -83,7 +85,7 @@ def get_session_by_date(date : str, filter):
             
         for session in all_sessions:
 
-            if session["date"] == date:
+            if session["date"] == adate:
 
                 return session
     else:
@@ -92,7 +94,7 @@ def get_session_by_date(date : str, filter):
             
         for session in filtered_sessions: 
 
-            if session["date"] == date:
+            if session["date"] == adate:
 
                 return session
 
@@ -130,3 +132,33 @@ def return_history(session_type, exercise_name):
                 past_volumes.append(volume)
 
     return past_volumes
+
+def return_details_of_exercise(exercise_name, session_type):
+    '''Takes a name of an exercise and returns 4 lists: past weights, past reps, past volumes and past dates'''
+
+    sessions = get_all_training_sessions(session_type)
+    
+    past_volumes = []
+    past_reps = []
+    past_weights = []
+    past_dates = []
+
+    # reverse to get newest first
+    for session in reversed(sessions): 
+
+        date = session["date"]
+    
+        for ex in session["exercises"]:
+    
+            if ex["exercise_name"] == exercise_name:
+
+                reps = sum(s["reps"] for s in ex["sets"])
+                weights = sum(s["weight"] for s in ex["sets"])
+                volume = sum(s["weight"] * s["reps"] for s in ex["sets"]) 
+
+                past_volumes.append(volume)
+                past_reps.append(reps)
+                past_weights.append(weights)
+                past_dates.append(date)
+    
+    return past_volumes, past_reps, past_weights, past_dates

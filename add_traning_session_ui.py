@@ -5,9 +5,6 @@ import json_functions.json_functions_sessions as jf_session
 
 import navigation as nav
 
-
-
-
 def select_exercise_type():
     
     result = jf_exercises.get_exercises_by_type(st.session_state.workout_type)

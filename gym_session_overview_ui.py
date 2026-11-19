@@ -2,6 +2,7 @@ import pandas as pd
 import streamlit as st
 import json_functions.json_functions_sessions as jf_se
 from datetime import date as datetime
+import navigation as nav
 
 def training_overview():
 
@@ -36,7 +37,7 @@ def training_overview():
             "y": {"field": "volume", "type": "quantitative"},
             "color": {"field": "session_type", "type": "nominal", "legend":None}, "fillOpacity": {
                 "condition": {"param": "point_selection", "value": 1},
-                "value": 1,
+                "value": 0.5,
             },
         },
     }
@@ -48,8 +49,6 @@ def training_overview():
     selection = session_event.selection
 
     points = selection.get("point_selection", [])
-
-    interval = selection.get("interval_selection", {})
 
     if points: # when point is selected on graph 
         
@@ -102,9 +101,6 @@ def training_overview():
     for stamp in timestamps
     ]
 
-    
-
-
     #debug
     #st.write(len(exercise_names), len(last_performed_info), len(volume_history))
     
@@ -131,11 +127,12 @@ def training_overview():
             selection_mode="single-cell"
     )
 
-    if exercise_event.selection.cells:
-        idx, name = exercise_event.selection.cells[0]
-        st.write(idx, name)
+    cells = exercise_event.selection.cells
+    if cells:
+        row, column = cells[0]
+        if column == "Name": # if name column is pressed
 
-        if (name == "Name"):
-
-            # show details
-    
+            pressed_exercise_name = df.iloc[row]["Name"] # get the name of the exercise in the corresponding row of Name column
+            st.session_state.show_details_of_exercise_name = pressed_exercise_name
+            nav.go_to_exercise_details()
+            st.rerun()
