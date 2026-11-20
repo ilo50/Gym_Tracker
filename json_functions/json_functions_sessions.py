@@ -8,7 +8,7 @@ def write_training_session(data):
     with open("data/training_sessions.json", "w", encoding="utf-8") as file:
         json.dump(data, file, indent=4, ensure_ascii=False)
 
-def add_training_session(sets_data, type):
+def add_training_session(sets_data, type, dateinput):
 
     data = load_training_session()
 
@@ -17,7 +17,7 @@ def add_training_session(sets_data, type):
     new_session = {
             "session_nr" : len(sessions)+1,
             "type" : type,
-            "date" : date.today().isoformat(),
+            "date" : str(dateinput),
             "exercises" : sets_data
     }
 

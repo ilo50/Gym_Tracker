@@ -294,6 +294,119 @@
                     ]
                 }
             ]
+        },
+        {
+            "session_nr": 11,
+            "type": "push",
+            "date": "2026-11-28",
+            "exercises": [
+                {
+                    "exercise_name": "exercise_1",
+                    "sets": [
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "session_nr": 12,
+            "type": "push",
+            "date": "2026-11-29",
+            "exercises": [
+                {
+                    "exercise_name": "exercise_1",
+                    "sets": [
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "session_nr": 13,
+            "type": "push",
+            "date": "2026-11-30",
+            "exercises": [
+                {
+                    "exercise_name": "Test Exercise with date",
+                    "sets": [
+                        {
+                            "weight": 38,
+                            "reps": 13
+                        },
+                        {
+                            "weight": 23,
+                            "reps": 12
+                        },
+                        {
+                            "weight": 13,
+                            "reps": 11
+                        }
+                    ]
+                },
+                {
+                    "exercise_name": "exercise_1",
+                    "sets": [
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "session_nr": 14,
+            "type": "push",
+            "date": "2026-12-02",
+            "exercises": [
+                {
+                    "exercise_name": "Test Exercise with date",
+                    "sets": [
+                        {
+                            "weight": 20,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 59,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 61,
+                            "reps": 10
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

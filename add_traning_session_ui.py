@@ -5,6 +5,8 @@ import json_functions.json_functions_sessions as jf_session
 
 import navigation as nav
 
+from datetime import date
+
 def select_exercise_type():
     
     result = jf_exercises.get_exercises_by_type(st.session_state.workout_type)
@@ -26,8 +28,13 @@ def add_new_session_form():
     "Select workout type",
     ("push", "pull", "legs"), 
     )
+
+    selected_date = st.date_input("Select date", date.today().isoformat())
+    st.write("Selected date:", selected_date)
+
+
     with st.container(horizontal=True):
-        st.button(key="session_form_button", label="Done", on_click=nav.go_to_select_exercises, args=(workout_type,))
+        st.button(key="session_form_button", label="Done", on_click=nav.go_to_select_exercises, args=(workout_type,selected_date))
         st.button("Cancel", on_click=nav.go_to_home)
 
 def next_exercise(exercise, sets_data):
@@ -41,7 +48,7 @@ def next_exercise(exercise, sets_data):
     st.session_state.exercise_index += 1
 
     if len(st.session_state.exercises) == st.session_state.exercise_index:
-        jf_session.add_training_session(st.session_state.results, st.session_state.workout_type)
+        jf_session.add_training_session(st.session_state.results, st.session_state.workout_type, st.session_state.selected_date)
         nav.go_to_home()
         
 def select_weight_and_reps():

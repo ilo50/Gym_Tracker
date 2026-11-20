@@ -13,9 +13,10 @@ def go_to_select_weight_and_reps(exercises, new_exercises):
 def go_to_add_new_session():
     st.session_state.page = "add_new_session_form"
 
-def go_to_select_exercises(workout_type):
+def go_to_select_exercises(workout_type, dateinput):
     st.session_state.workout_type = workout_type
     st.session_state.page = "select_exercise_type"
+    st.session_state.selected_date = dateinput
 
 def go_to_home():
     st.session_state.page = "home"
