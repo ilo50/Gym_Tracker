@@ -143,10 +143,13 @@ def return_details_of_exercise(exercise_name, session_type):
     past_weights = []
     past_dates = []
 
+    type = ""
+
     # reverse to get newest first
     for session in reversed(sessions): 
 
         date = session["date"]
+        type = session["type"]
     
         for ex in session["exercises"]:
     
@@ -161,4 +164,4 @@ def return_details_of_exercise(exercise_name, session_type):
                 past_weights.append(weights)
                 past_dates.append(date)
     
-    return past_volumes, past_reps, past_weights, past_dates
+    return past_volumes, past_reps, past_weights, past_dates, type

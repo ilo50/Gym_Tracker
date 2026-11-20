@@ -270,6 +270,30 @@
                     ]
                 }
             ]
+        },
+        {
+            "session_nr": 10,
+            "type": "push",
+            "date": "2026-11-27",
+            "exercises": [
+                {
+                    "exercise_name": "Benchpress",
+                    "sets": [
+                        {
+                            "weight": 71,
+                            "reps": 10
+                        },
+                        {
+                            "weight": 68,
+                            "reps": 9
+                        },
+                        {
+                            "weight": 47,
+                            "reps": 8
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

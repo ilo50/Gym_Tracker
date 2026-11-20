@@ -100,15 +100,12 @@ def training_overview():
     if stamp is not None else None
     for stamp in timestamps
     ]
-
-    #debug
-    #st.write(len(exercise_names), len(last_performed_info), len(volume_history))
     
     st.write(f"Details of {selected_session_type} session from {st.session_state.show_details_of_session}")
     df = pd.DataFrame(
             {
                 "Name": exercise_names,
-                "Last Performed": last_performed_info,
+                f"Previosly performed prior to date {st.session_state.show_details_of_session}": last_performed_info,
                 "History": volume_history,
             }
     )
