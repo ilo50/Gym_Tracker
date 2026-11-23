@@ -2,23 +2,108 @@
     "training_sessions": [
         {
             "session_nr": 1,
-            "type": "pull",
-            "date": "2026-11-12",
+            "type": "push",
+            "date": "2026-11-16",
             "exercises": [
                 {
-                    "exercise_name": "tset",
+                    "exercise_name": "Dumbbell Shoulder Press",
                     "sets": [
                         {
-                            "weight": 20,
-                            "reps": 10
+                            "weight": 17,
+                            "reps": 9
                         },
                         {
-                            "weight": 20,
-                            "reps": 10
+                            "weight": 17,
+                            "reps": 8
                         },
                         {
-                            "weight": 20,
-                            "reps": 10
+                            "weight": 17,
+                            "reps": 5
+                        }
+                    ]
+                },
+                {
+                    "exercise_name": "Dumbbell Lateral Raise",
+                    "sets": [
+                        {
+                            "weight": 9,
+                            "reps": 8
+                        },
+                        {
+                            "weight": 9,
+                            "reps": 7
+                        },
+                        {
+                            "weight": 9,
+                            "reps": 5
+                        }
+                    ]
+                },
+                {
+                    "exercise_name": "Rope Triceps Pushdown",
+                    "sets": [
+                        {
+                            "weight": 6,
+                            "reps": 8
+                        },
+                        {
+                            "weight": 6,
+                            "reps": 7
+                        },
+                        {
+                            "weight": 6,
+                            "reps": 5
+                        }
+                    ]
+                },
+                {
+                    "exercise_name": "Overhead Triceps Extension",
+                    "sets": [
+                        {
+                            "weight": 5,
+                            "reps": 8
+                        },
+                        {
+                            "weight": 5,
+                            "reps": 7
+                        },
+                        {
+                            "weight": 5,
+                            "reps": 5
+                        }
+                    ]
+                },
+                {
+                    "exercise_name": "Machine Pec Fly",
+                    "sets": [
+                        {
+                            "weight": 10,
+                            "reps": 7
+                        },
+                        {
+                            "weight": 10,
+                            "reps": 5
+                        },
+                        {
+                            "weight": 10,
+                            "reps": 5
+                        }
+                    ]
+                },
+                {
+                    "exercise_name": "Standing Cable LC Press",
+                    "sets": [
+                        {
+                            "weight": 4,
+                            "reps": 5
+                        },
+                        {
+                            "weight": 4,
+                            "reps": 4
+                        },
+                        {
+                            "weight": 4,
+                            "reps": 3
                         }
                     ]
                 }
@@ -27,22 +112,73 @@
         {
             "session_nr": 2,
             "type": "pull",
-            "date": "2026-11-13",
+            "date": "2026-11-17",
             "exercises": [
                 {
-                    "exercise_name": "exercise_1",
+                    "exercise_name": "Seated Incline Dumbbell Bicep Curl",
                     "sets": [
                         {
-                            "weight": 20,
-                            "reps": 10
+                            "weight": 12.5,
+                            "reps": 6
                         },
                         {
-                            "weight": 20,
-                            "reps": 10
+                            "weight": 12.5,
+                            "reps": 5
                         },
                         {
-                            "weight": 20,
-                            "reps": 10
+                            "weight": 12.5,
+                            "reps": 4
+                        }
+                    ]
+                },
+                {
+                    "exercise_name": "Dumbbell Hammer Curl",
+                    "sets": [
+                        {
+                            "weight": 12.5,
+                            "reps": 7
+                        },
+                        {
+                            "weight": 12.5,
+                            "reps": 6
+                        },
+                        {
+                            "weight": 12.5,
+                            "reps": 5
+                        }
+                    ]
+                },
+                {
+                    "exercise_name": "Lat Row Machine",
+                    "sets": [
+                        {
+                            "weight": 50.0,
+                            "reps": 13
+                        },
+                        {
+                            "weight": 55.0,
+                            "reps": 9
+                        },
+                        {
+                            "weight": 55.0,
+                            "reps": 7
+                        }
+                    ]
+                },
+                {
+                    "exercise_name": "Wide Overhand Grip Lat Pulldown",
+                    "sets": [
+                        {
+                            "weight": 40.0,
+                            "reps": 6
+                        },
+                        {
+                            "weight": 35.0,
+                            "reps": 8
+                        },
+                        {
+                            "weight": 35.0,
+                            "reps": 6
                         }
                     ]
                 }
@@ -51,22 +187,56 @@
         {
             "session_nr": 3,
             "type": "legs",
-            "date": "2026-11-14",
+            "date": "2026-11-19",
             "exercises": [
                 {
-                    "exercise_name": "exercise_1",
+                    "exercise_name": "Leg Curl Machine",
                     "sets": [
                         {
-                            "weight": 20,
-                            "reps": 13
+                            "weight": 35.0,
+                            "reps": 8
                         },
                         {
-                            "weight": 20,
+                            "weight": 35.0,
+                            "reps": 6
+                        },
+                        {
+                            "weight": 35.0,
+                            "reps": 5
+                        }
+                    ]
+                },
+                {
+                    "exercise_name": "Hip Adduction Machine",
+                    "sets": [
+                        {
+                            "weight": 12.0,
+                            "reps": 11
+                        },
+                        {
+                            "weight": 12.0,
                             "reps": 10
                         },
                         {
-                            "weight": 20,
+                            "weight": 12.0,
+                            "reps": 9
+                        }
+                    ]
+                },
+                {
+                    "exercise_name": "Hip Abduction Machine",
+                    "sets": [
+                        {
+                            "weight": 12.0,
                             "reps": 10
+                        },
+                        {
+                            "weight": 12.0,
+                            "reps": 9
+                        },
+                        {
+                            "weight": 12.0,
+                            "reps": 8
                         }
                     ]
                 }
@@ -75,22 +245,73 @@
         {
             "session_nr": 4,
             "type": "pull",
-            "date": "2026-11-15",
+            "date": "2026-11-20",
             "exercises": [
                 {
-                    "exercise_name": "exercise_1",
+                    "exercise_name": "Dumbbell Row",
                     "sets": [
                         {
-                            "weight": 20,
-                            "reps": 10
+                            "weight": 17.0,
+                            "reps": 11
                         },
                         {
-                            "weight": 20,
-                            "reps": 10
+                            "weight": 17.0,
+                            "reps": 8
                         },
                         {
-                            "weight": 20,
-                            "reps": 10
+                            "weight": 17.0,
+                            "reps": 6
+                        }
+                    ]
+                },
+                {
+                    "exercise_name": "Standing EZ Bar Curl",
+                    "sets": [
+                        {
+                            "weight": 20.0,
+                            "reps": 9
+                        },
+                        {
+                            "weight": 20.0,
+                            "reps": 7
+                        },
+                        {
+                            "weight": 20.0,
+                            "reps": 5
+                        }
+                    ]
+                },
+                {
+                    "exercise_name": "Preacher Curl Bench Dumbbell",
+                    "sets": [
+                        {
+                            "weight": 11.0,
+                            "reps": 8
+                        },
+                        {
+                            "weight": 11.0,
+                            "reps": 7
+                        },
+                        {
+                            "weight": 11.0,
+                            "reps": 5
+                        }
+                    ]
+                },
+                {
+                    "exercise_name": "Close Grip V-Bar Lat Pulldown",
+                    "sets": [
+                        {
+                            "weight": 35.0,
+                            "reps": 8
+                        },
+                        {
+                            "weight": 35.0,
+                            "reps": 7
+                        },
+                        {
+                            "weight": 35.0,
+                            "reps": 7
                         }
                     ]
                 }
@@ -99,197 +320,107 @@
         {
             "session_nr": 5,
             "type": "push",
-            "date": "2026-11-18",
-            "exercises": [
-                {
-                    "exercise_name": "exercise_1",
-                    "sets": [
-                        {
-                            "weight": 20,
-                            "reps": 10
-                        },
-                        {
-                            "weight": 33,
-                            "reps": 10
-                        },
-                        {
-                            "weight": 68,
-                            "reps": 10
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "session_nr": 6,
-            "type": "legs",
             "date": "2026-11-22",
             "exercises": [
                 {
-                    "exercise_name": "#egsgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg",
+                    "exercise_name": "Machine Pec Fly",
                     "sets": [
                         {
-                            "weight": 80,
-                            "reps": 15
+                            "weight": 10.0,
+                            "reps": 7
                         },
                         {
-                            "weight": 101,
-                            "reps": 21
+                            "weight": 10.0,
+                            "reps": 6
                         },
                         {
-                            "weight": 115,
-                            "reps": 12
-                        },
-                        {
-                            "weight": 115,
-                            "reps": 13
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "session_nr": 7,
-            "type": "pull",
-            "date": "2026-11-24",
-            "exercises": [
-                {
-                    "exercise_name": "exercise_1",
-                    "sets": [
-                        {
-                            "weight": 61,
-                            "reps": 10
-                        },
-                        {
-                            "weight": 20,
-                            "reps": 10
-                        },
-                        {
-                            "weight": 20,
-                            "reps": 10
+                            "weight": 10.0,
+                            "reps": 5
                         }
                     ]
                 },
                 {
-                    "exercise_name": "f",
+                    "exercise_name": "Cable Single Arm Pushdown",
                     "sets": [
                         {
-                            "weight": 20,
-                            "reps": 10
+                            "weight": 2.0,
+                            "reps": 8
                         },
                         {
-                            "weight": 20,
-                            "reps": 10
+                            "weight": 2.0,
+                            "reps": 7
                         },
                         {
-                            "weight": 20,
-                            "reps": 10
+                            "weight": 2.0,
+                            "reps": 6
                         }
                     ]
                 },
                 {
-                    "exercise_name": "d",
+                    "exercise_name": "Dumbbell Shoulder Press",
                     "sets": [
                         {
-                            "weight": 20,
-                            "reps": 10
-                        },
-                        {
-                            "weight": 20,
-                            "reps": 10
-                        },
-                        {
-                            "weight": 78,
-                            "reps": 10
-                        }
-                    ]
-                },
-                {
-                    "exercise_name": "c",
-                    "sets": [
-                        {
-                            "weight": 20,
-                            "reps": 10
-                        },
-                        {
-                            "weight": 249,
-                            "reps": 10
-                        },
-                        {
-                            "weight": 20,
-                            "reps": 10
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "session_nr": 8,
-            "type": "push",
-            "date": "2026-11-25",
-            "exercises": [
-                {
-                    "exercise_name": "Benchpress",
-                    "sets": [
-                        {
-                            "weight": 54,
-                            "reps": 20
-                        },
-                        {
-                            "weight": 59,
-                            "reps": 19
-                        },
-                        {
-                            "weight": 68,
-                            "reps": 18
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "session_nr": 9,
-            "type": "push",
-            "date": "2026-11-26",
-            "exercises": [
-                {
-                    "exercise_name": "Benchpress",
-                    "sets": [
-                        {
-                            "weight": 59,
-                            "reps": 11
-                        },
-                        {
-                            "weight": 59,
-                            "reps": 13
-                        },
-                        {
-                            "weight": 57,
-                            "reps": 16
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "session_nr": 10,
-            "type": "push",
-            "date": "2026-11-27",
-            "exercises": [
-                {
-                    "exercise_name": "Benchpress",
-                    "sets": [
-                        {
-                            "weight": 71,
-                            "reps": 10
-                        },
-                        {
-                            "weight": 68,
+                            "weight": 15.0,
                             "reps": 9
                         },
                         {
-                            "weight": 47,
+                            "weight": 15.0,
+                            "reps": 7
+                        },
+                        {
+                            "weight": 15.0,
+                            "reps": 5
+                        }
+                    ]
+                },
+                {
+                    "exercise_name": "Overhead Triceps Extension",
+                    "sets": [
+                        {
+                            "weight": 4.0,
                             "reps": 8
+                        },
+                        {
+                            "weight": 4.0,
+                            "reps": 7
+                        },
+                        {
+                            "weight": 4.0,
+                            "reps": 6
+                        }
+                    ]
+                },
+                {
+                    "exercise_name": "Dumbbell Lateral Raise",
+                    "sets": [
+                        {
+                            "weight": 10.0,
+                            "reps": 6
+                        },
+                        {
+                            "weight": 9.0,
+                            "reps": 8
+                        },
+                        {
+                            "weight": 9.0,
+                            "reps": 8
+                        }
+                    ]
+                },
+                {
+                    "exercise_name": "Chest Press Machine",
+                    "sets": [
+                        {
+                            "weight": 40.0,
+                            "reps": 9
+                        },
+                        {
+                            "weight": 40.0,
+                            "reps": 7
+                        },
+                        {
+                            "weight": 40.0,
+                            "reps": 6
                         }
                     ]
                 }

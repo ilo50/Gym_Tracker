@@ -1,11 +1,12 @@
 import json
 from datetime import date
 from pathlib import Path
+import os
 
-import streamlit as st
+LIVE_DATA_PATH = "data/training_sessions_live_data.json"
 
 def write_training_session(data):
-    with open("data/training_sessions.json", "w", encoding="utf-8") as file:
+    with open(LIVE_DATA_PATH, "w", encoding="utf-8") as file:
         json.dump(data, file, indent=4, ensure_ascii=False)
 
 def add_training_session(sets_data, type, dateinput):
@@ -29,11 +30,12 @@ def load_training_session():
 
     default = {"training_sessions": []}
 
+   
     # if manually emptying the training sessions, recreate the root
-    if Path("data/training_sessions.json").stat().st_size == 0:
+    if Path(LIVE_DATA_PATH).stat().st_size == 0:
         return default
 
-    with open("data/training_sessions.json", "r", encoding="utf-8") as file:
+    with open(LIVE_DATA_PATH, "r", encoding="utf-8") as file:
         return json.load(file)
 
 def get_training_sessions(amount, filter): 

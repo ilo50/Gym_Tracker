@@ -8,6 +8,8 @@ def training_overview():
 
     # get the training sessions by selected amount
     selected_sessions = jf_se.get_training_sessions(st.session_state.day_interval, st.session_state.session_filter)
+    if not selected_sessions:
+        return # nothing to show
 
     dates = [session["date"] for session in selected_sessions] 
     session_types = [session["type"] for session in selected_sessions] 
@@ -78,6 +80,8 @@ def training_overview():
 
     # current session and type
     selected_session = jf_se.get_session_by_date(st.session_state.show_details_of_session, st.session_state.session_filter)
+    if not selected_session:
+        return # no selected session
     selected_session_type = selected_session["type"]
 
     # get all exercises names of selected session

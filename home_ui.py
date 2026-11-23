@@ -14,8 +14,12 @@ def home():
             st.session_state.session_filter = "all" 
 
     if "show_details_of_session" not in st.session_state: # default session is most recent
-            most_recent_session_date = jfs.get_training_sessions(1, st.session_state.session_filter)[0]["date"]
-            st.session_state.show_details_of_session = most_recent_session_date
+            most_recent_session = jfs.get_training_sessions(1, st.session_state.session_filter)
+            if len(most_recent_session)!=0:
+                most_recent_session_date = most_recent_session[0]["date"]
+                st.session_state.show_details_of_session = most_recent_session_date
+            else:
+                st.session_state.show_details_of_session = None
 
     with st.container(horizontal=True, vertical_alignment="center"):
         st.subheader(f"Showing training activity last {st.session_state.day_interval} days")
@@ -38,5 +42,9 @@ def update_session_filter():
     st.session_state.session_filter = st.session_state.session_filter_input
 
     # when changing filter, get a new most recent session date for that filter
-    most_recent_session_date = jfs.get_training_sessions(1, st.session_state.session_filter)[0]["date"]
-    st.session_state.show_details_of_session = most_recent_session_date
+    most_recent_session = jfs.get_training_sessions(1, st.session_state.session_filter)
+    if len(most_recent_session)!=0:
+        most_recent_session_date = most_recent_session[0]["date"]
+        st.session_state.show_details_of_session = most_recent_session_date
+    else:
+        st.session_state.show_details_of_session = None

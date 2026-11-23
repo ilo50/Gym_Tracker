@@ -30,9 +30,7 @@ def add_new_session_form():
     )
 
     selected_date = st.date_input("Select date", date.today().isoformat())
-    st.write("Selected date:", selected_date)
-
-
+    
     with st.container(horizontal=True):
         st.button(key="session_form_button", label="Done", on_click=nav.go_to_select_exercises, args=(workout_type,selected_date))
         st.button("Cancel", on_click=nav.go_to_home)
@@ -83,21 +81,27 @@ def select_weight_and_reps():
 
         with col1:
             weight = st.slider(
-                        label="",
-                        min_value=0,
-                        max_value=300,
-                        value=20,
-                        key=f"weight_{exercise}_{n}"
-                        )
+                label="Weight (kg)",
+                min_value=1.0,
+                max_value=200.0,
+                value=20.0,
+                step=0.5,
+                format="%.1f",
+                key=f"weight_{exercise}_{n}",
+                label_visibility="collapsed",
+            )
 
         with col2:
             reps = st.slider(
-                        label="",
-                        min_value=0,
-                        max_value=30,
-                        value=10,
-                        key=f"reps_{exercise}_{n}"
-                        )
+                label="Repetitions",
+                min_value=1,
+                max_value=30,
+                value=10,
+                step=1,
+                key=f"reps_{exercise}_{n}",
+                label_visibility="collapsed",                
+            )
+                        
 
         set_data.append({"weight": weight, "reps": reps})
     with st.container(horizontal=True):
