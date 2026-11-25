@@ -47,6 +47,16 @@ def next_exercise(exercise, sets_data):
 
     if len(st.session_state.exercises) == st.session_state.exercise_index:
         jf_session.add_training_session(st.session_state.results, st.session_state.workout_type, st.session_state.selected_date)
+
+        # after session is added update which session to show details of
+        # since it will most likely be this new one
+        most_recent_session = jf_session.get_training_sessions(1, st.session_state.session_filter)
+        if len(most_recent_session)!=0:
+            most_recent_session_date = most_recent_session[0]["date"]
+            st.session_state.show_details_of_session = most_recent_session_date
+        else:
+            st.session_state.show_details_of_session = None
+
         nav.go_to_home()
         
 def select_weight_and_reps():
