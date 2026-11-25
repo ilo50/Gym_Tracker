@@ -1,21 +1,17 @@
 import json
 from pathlib import Path
+import supabase_utils.file_handling as sb_fh
+
+PATH = "data/exercises.json"
+NAME = "exercise_data"
 
 def load_exercises():
-    default = {"exercises":[{"type": "pull","names": []},
-                            {"type": "push","names": []},
-                            {"type": "legs","names": []}]}
-        
-    # if manually emptying the exercises, recreate the root
-    if Path("data/exercises.json").stat().st_size == 0:
-        return default
-        
-    with open("data/exercises.json", "r", encoding="utf-8") as file:
-        return json.load(file)
+    '''wrapper for the file download in supabase utils'''
+    return sb_fh.download_data_from_supabase_bucket(PATH, NAME)
 
 def write_exercise(data):
-    with open("data/exercises.json", "w", encoding="utf-8") as file:
-            json.dump(data, file, indent=4, ensure_ascii=False)
+    '''wrapper for the file upload in supabase utils'''
+    sb_fh.upload_data_to_supabase_bucket(data, PATH, NAME)
 
 # return all exercises in json file, by specified type of exercise
 def get_exercises_by_type(workout_type : str) -> list:

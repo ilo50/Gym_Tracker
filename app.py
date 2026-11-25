@@ -4,7 +4,6 @@ import add_traning_session_ui as add_session
 import home_ui as home
 import exercise_details_ui as ex_det
 
-
 st.set_page_config(layout="wide")
 
 # init

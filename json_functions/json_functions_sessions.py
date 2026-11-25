@@ -1,13 +1,16 @@
-import json
-from datetime import date
-from pathlib import Path
-import os
+import supabase_utils.file_handling as sb_fh
 
-LIVE_DATA_PATH = "data/training_sessions_live_data.json"
+PATH = "data/training_sessions_live_data.json"
+NAME = "workout-data"
+
+def load_training_session():
+    '''wrapper for the file download in supabase utils'''
+    return sb_fh.download_data_from_supabase_bucket(PATH, NAME)
 
 def write_training_session(data):
-    with open(LIVE_DATA_PATH, "w", encoding="utf-8") as file:
-        json.dump(data, file, indent=4, ensure_ascii=False)
+    '''wrapper for the file upload in supabase utils'''
+    sb_fh.upload_data_to_supabase_bucket(data, PATH, NAME)
+    
 
 def add_training_session(sets_data, type, dateinput):
 
@@ -26,17 +29,6 @@ def add_training_session(sets_data, type, dateinput):
 
     write_training_session(data)
 
-def load_training_session():
-
-    default = {"training_sessions": []}
-
-   
-    # if manually emptying the training sessions, recreate the root
-    if Path(LIVE_DATA_PATH).stat().st_size == 0:
-        return default
-
-    with open(LIVE_DATA_PATH, "r", encoding="utf-8") as file:
-        return json.load(file)
 
 def get_training_sessions(amount, filter): 
 
