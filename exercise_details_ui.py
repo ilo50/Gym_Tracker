@@ -8,7 +8,7 @@ def exercise_details():
 
     '''displays detailed information about a specific exercise'''
 
-    st.subheader(f"Showing details of {st.session_state.show_details_of_exercise_name} exercise")
+    st.subheader(f"Details of {st.session_state.show_details_of_exercise_name} exercise")
 
     row1_col1, row1_col2, row1_col3 = st.columns(3)
 
@@ -33,15 +33,15 @@ def exercise_details():
 
     with row1_col1:
         st.write("Volumes")
-        st.line_chart(df_volume, x="dates", y="volumes")
+        st.line_chart(df_volume, x="dates", y="volumes", height=200)
     
     with row1_col2:
         st.write("Weights")
-        st.line_chart(df_weights, x="dates", y="weights")
+        st.line_chart(df_weights, x="dates", y="weights", height=200)
     
     with row1_col3:
         st.write("Reps")
-        st.line_chart(df_reps, x="dates", y="reps")
+        st.line_chart(df_reps, x="dates", y="reps", height=200)
 
     df_exercise_details = pd.DataFrame(
                 {
