@@ -4,7 +4,7 @@ import gym_session_overview_ui as gso
 import json_functions.json_functions_sessions as jfs
 
 # import css to apply the stylings
-import streamlit_css as scss
+import streamlit_css
 
 def home():
     
