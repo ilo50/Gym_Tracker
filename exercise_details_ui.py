@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 import json_functions.json_functions_sessions as jf_se
 import navigation as nav
-import matplotlib as plt
+import matplotlib.pyplot as plt
 
 
 def exercise_details():
