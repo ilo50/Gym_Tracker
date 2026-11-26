@@ -83,10 +83,7 @@ def select_weight_and_reps():
 
         st.caption(f"Set {n+1}")
 
-        col1, col2 = st.columns(2, gap="small")
-
-        with col1:
-            st.markdown("***Weight***")
+        with st.container(horizontal=True, vertical_alignment="center"):
             weight = st.number_input(
                     label="Weight (kg)",
                     min_value=1.0,
@@ -97,9 +94,9 @@ def select_weight_and_reps():
                     key=f"weight_{exercise}_{n}",
                     label_visibility="collapsed",
             )
+            st.markdown("***Weight***")
 
-        with col2:
-            st.markdown("***Repetitions***")
+        with st.container(horizontal=True, vertical_alignment="center"):
             reps = st.number_input(
                     label="Repetitions",
                     min_value=1,
@@ -109,6 +106,8 @@ def select_weight_and_reps():
                     key=f"reps_{exercise}_{n}",
                     label_visibility="collapsed",                
             )
+            st.markdown("***Repetitions***")
+            
         set_data.append({"weight": weight, "reps": reps})
 
     with st.container(horizontal=True):
