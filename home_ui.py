@@ -3,9 +3,6 @@ import navigation as nav
 import gym_session_overview_ui as gso
 import json_functions.json_functions_sessions as jfs
 
-# import css to apply the stylings
-import streamlit_css
-
 def home():
     
     # keep track of how many days to show in sessions overview 
