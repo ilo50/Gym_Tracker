@@ -81,11 +81,11 @@ def select_weight_and_reps():
 
     for n in range(nr_of_sets):
 
-        st.write(f"Set {n+1}")
+        st.markdown(f"**Set {n+1}**")
         col1, col2 = st.columns(2, gap="small")
 
         with col1:
-            st.markdown("**Weight**")
+            st.caption("Weight")
             weight = st.number_input(
                 "Weight",
                 min_value=1.0,
@@ -98,7 +98,7 @@ def select_weight_and_reps():
             )
 
         with col2:
-            st.markdown("**Repetitions**")
+            st.caption("Repetitions")
             reps = st.number_input(
                 "Reps",
                 min_value=1,
