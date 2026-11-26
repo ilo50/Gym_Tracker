@@ -75,8 +75,11 @@ def training_overview():
 
             st.session_state.most_recent_point = point
 
-            # debug
-            #st.write(f"new point pressed, with date: {date_str}")
+
+def specific_session_overview():
+
+    '''Shows the summary of latest or selected session,
+    eg its exercises and their volumes'''
 
     # current session and type
     selected_session = jf_se.get_session_by_date(st.session_state.show_details_of_session, st.session_state.session_filter)

@@ -36,9 +36,9 @@ def home():
     # plots the graph of past sessions
     gso.training_overview()
 
+    st.slider("Change interval", min_value=7, max_value=365, value=st.session_state.day_interval, on_change=update_day_interval, key="interval_input")
     
-    st.number_input("Change interval", min_value=7, max_value=365, value=st.session_state.day_interval, on_change=update_day_interval, key="interval_input")
-    
+    gso.specific_session_overview()
 
 def update_day_interval():
     st.session_state.day_interval = st.session_state.interval_input
