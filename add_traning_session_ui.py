@@ -85,7 +85,7 @@ def select_weight_and_reps():
         col1, col2 = st.columns(2, gap="small")
 
         with col1:
-            st.caption("Weight")
+            st.markdown("**Weight**")
             weight = st.number_input(
                 "Weight",
                 min_value=1.0,
@@ -98,7 +98,7 @@ def select_weight_and_reps():
             )
 
         with col2:
-            st.caption("Repetitions")
+            st.markdown("**Repetitions**")
             reps = st.number_input(
                 "Reps",
                 min_value=1,
