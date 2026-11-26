@@ -82,32 +82,38 @@ def select_weight_and_reps():
     for n in range(nr_of_sets):
 
         st.caption(f"Set {n+1}")
+        col1, col2 = st.columns(2, gap="small")
 
-        with st.container(horizontal=True, vertical_alignment="center"):
+        with col1:
+            st.markdown(
+                "<small>WEIGHT (KG)</small>",
+                unsafe_allow_html=True
+            )
             weight = st.number_input(
-                    label="Weight (kg)",
-                    min_value=1.0,
-                    max_value=200.0,
-                    value=20.0,
-                    step=0.5,
-                    format="%.1f",
-                    key=f"weight_{exercise}_{n}",
-                    label_visibility="collapsed",
+                "Weight",
+                min_value=1.0,
+                max_value=200.0,
+                value=20.0,
+                step=0.5,
+                format="%.1f",
+                key=f"weight_{exercise}_{n}",
+                label_visibility="collapsed",
             )
-            st.markdown("***Weight***")
 
-        with st.container(horizontal=True, vertical_alignment="center"):
-            reps = st.number_input(
-                    label="Repetitions",
-                    min_value=1,
-                    max_value=30,
-                    value=10,
-                    step=1,
-                    key=f"reps_{exercise}_{n}",
-                    label_visibility="collapsed",                
+        with col2:
+            st.markdown(
+                "<small>REPS</small>",
+                unsafe_allow_html=True
             )
-            st.markdown("***Repetitions***")
-            
+            reps = st.number_input(
+                "Reps",
+                min_value=1,
+                max_value=30,
+                value=10,
+                key=f"reps_{exercise}_{n}",
+                label_visibility="collapsed",
+            )
+
         set_data.append({"weight": weight, "reps": reps})
 
     with st.container(horizontal=True):
