@@ -21,11 +21,12 @@ def home():
             else:
                 st.session_state.show_details_of_session = None
 
-    with st.container(horizontal=True, vertical_alignment="center"):
-        st.subheader(f"Showing training activity last {st.session_state.day_interval} days")
-        st.space("stretch")
-        st.number_input("Change interval", min_value=7, max_value=365, value=st.session_state.day_interval, on_change=update_day_interval, key="interval_input")
+    
+    st.subheader(f"Past {st.session_state.day_interval} Days Of Training")
+        
+    st.number_input("Change interval", min_value=7, max_value=365, value=st.session_state.day_interval, on_change=update_day_interval, key="interval_input")
 
+    # plots the graph of past sessions
     gso.training_overview()
 
     with st.container(horizontal=True, vertical_alignment="center"):

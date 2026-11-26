@@ -116,7 +116,7 @@ def return_history(session_type, exercise_name):
     past_volumes = []
 
     # reverse to get newest first
-    for session in reversed(sessions): 
+    for session in sessions: 
 
         for ex in session["exercises"]:
 
@@ -140,7 +140,7 @@ def return_details_of_exercise(exercise_name, session_type):
     type = ""
 
     # reverse to get newest first
-    for session in reversed(sessions): 
+    for session in sessions: 
 
         date = session["date"]
         type = session["type"]

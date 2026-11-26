@@ -44,7 +44,7 @@ def training_overview():
         },
     }
 
-    session_event = st.vega_lite_chart(df, spec, key="vega_chart", on_select="rerun")
+    session_event = st.vega_lite_chart(df, spec, key="vega_chart", on_select="rerun", height=200)
 
     session_event
 
