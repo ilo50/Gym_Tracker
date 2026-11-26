@@ -90,7 +90,7 @@ def select_weight_and_reps():
         col1, col2 = st.columns(2)
 
         with col1:
-            weight = st.slider(
+            weight = st.number_input(
                 label="Weight (kg)",
                 min_value=1.0,
                 max_value=200.0,
@@ -102,7 +102,7 @@ def select_weight_and_reps():
             )
 
         with col2:
-            reps = st.slider(
+            reps = st.number_input(
                 label="Repetitions",
                 min_value=1,
                 max_value=30,
