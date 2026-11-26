@@ -3,6 +3,9 @@ import navigation as nav
 import gym_session_overview_ui as gso
 import json_functions.json_functions_sessions as jfs
 
+# import css to apply the stylings
+import streamlit_css as scss
+
 def home():
     
     # keep track of how many days to show in sessions overview 
@@ -23,18 +26,19 @@ def home():
 
     
     st.subheader(f"Past {st.session_state.day_interval} Days Of Training")
-        
-    st.number_input("Change interval", min_value=7, max_value=365, value=st.session_state.day_interval, on_change=update_day_interval, key="interval_input")
 
+    with st.container(horizontal=True, vertical_alignment="center"):
+            st.menu_button("Filter", options=["all", "pull", "push", "legs"], on_click=update_session_filter, key="session_filter_input") 
+            st.write(f"Filtered by {st.session_state.session_filter}")
+            st.space("stretch")
+            st.button("Add new session", on_click=nav.go_to_add_new_session) 
+        
     # plots the graph of past sessions
     gso.training_overview()
 
-    with st.container(horizontal=True, vertical_alignment="center"):
-        st.menu_button("Filter", options=["all", "pull", "push", "legs"], on_click=update_session_filter, key="session_filter_input") 
-        st.write(f"Filtered by {st.session_state.session_filter}")
-        st.space("stretch")
-        st.button("Add new session", on_click=nav.go_to_add_new_session) 
-
+    
+    st.number_input("Change interval", min_value=7, max_value=365, value=st.session_state.day_interval, on_change=update_day_interval, key="interval_input")
+    
 
 def update_day_interval():
     st.session_state.day_interval = st.session_state.interval_input
