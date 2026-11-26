@@ -33,15 +33,15 @@ def exercise_details():
 
     with row1_col1:
         st.write("Volumes")
-        st.line_chart(df_volume, x="dates", y="volumes", height=200)
+        st.line_chart(df_volume, x="dates", y="volumes", height=200, on_select="ignore")
     
     with row1_col2:
         st.write("Weights")
-        st.line_chart(df_weights, x="dates", y="weights", height=200)
+        st.line_chart(df_weights, x="dates", y="weights", height=200, on_select="ignore")
     
     with row1_col3:
         st.write("Reps")
-        st.line_chart(df_reps, x="dates", y="reps", height=200)
+        st.line_chart(df_reps, x="dates", y="reps", height=200, on_select="ignore")
 
     df_exercise_details = pd.DataFrame(
                 {
