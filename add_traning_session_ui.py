@@ -87,7 +87,7 @@ def select_weight_and_reps():
 
     for n in range(nr_of_sets):
 
-        col1, col2 = st.columns(2)
+        col1, col2 = st.columns([1, 1], gap="small")
 
         with col1:
             weight = st.number_input(
