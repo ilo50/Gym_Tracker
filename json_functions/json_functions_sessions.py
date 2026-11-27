@@ -1,6 +1,14 @@
 import supabase_utils.file_handling as sb_fh
 
-PATH = "data/training_sessions_live_data.json"
+# live path
+LIVE_DATA_PATH = "data/training_sessions_live_data.json"
+
+# fake data path
+FAKE_DATA_PATH = "data/training_sessions_fake_data.json"
+
+# set path
+PATH = FAKE_DATA_PATH
+
 NAME = "workout-data"
 
 def load_training_session():

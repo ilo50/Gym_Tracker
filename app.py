@@ -4,6 +4,9 @@ import add_traning_session_ui as add_session
 import home_ui as home
 import exercise_details_ui as ex_det
 
+# use or not use live data
+st.session_state.use_live_data = False
+
 st.set_page_config(layout="wide")
 
 # Global CSS styling to remove toolbars
