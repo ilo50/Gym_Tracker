@@ -4,10 +4,14 @@ import json_functions.json_functions_exercises as jf_exercises
 import json_functions.json_functions_sessions as jf_session
 
 import navigation as nav
-
 from datetime import date
+import pandas as pd
 
 def select_exercise_type():
+
+    '''contains multiselect for exercises, done and cancel, and if exercises are not empty, 
+    offers option to add more with "add another exercise button"
+    '''
     
     result = jf_exercises.get_exercises_by_type(st.session_state.workout_type)
     exercises = st.multiselect(
@@ -17,9 +21,17 @@ def select_exercise_type():
     )
     new_exercises = [name for name in exercises if name not in result] # if new exercise is added, put in exercises.json
 
+
     with st.container(horizontal=True):
-            st.button("Done", on_click=nav.go_to_select_weight_and_reps, args=(exercises,new_exercises), disabled=not exercises)
+            st.button("Fill out selected exercises", on_click=nav.go_to_select_weight_and_reps, args=(exercises,new_exercises), disabled=not exercises)
             st.button("Cancel", on_click=nav.go_to_home)
+
+    # if selected exercise, show currently selected
+    if len(st.session_state.results) > 0:
+        st.write("Currently selected exercises:")
+        show_currently_selected_exercises() 
+        st.button("Done", on_click=submit_exercises)
+    
 
 def add_new_session_form():
 
@@ -37,6 +49,8 @@ def add_new_session_form():
 
 def next_exercise(exercise, sets_data):
 
+    '''handles what is done after weight and resps are filled out for an exercise'''
+
     st.session_state.results.append(
         {
             "exercise_name" : exercise,
@@ -46,18 +60,9 @@ def next_exercise(exercise, sets_data):
     st.session_state.exercise_index += 1
 
     if len(st.session_state.exercises) == st.session_state.exercise_index:
-        jf_session.add_training_session(st.session_state.results, st.session_state.workout_type, st.session_state.selected_date)
 
-        # after session is added update which session to show details of
-        # since it will most likely be this new one
-        most_recent_session = jf_session.get_training_sessions(1, st.session_state.session_filter)
-        if len(most_recent_session)!=0:
-            most_recent_session_date = most_recent_session[0]["date"]
-            st.session_state.show_details_of_session = most_recent_session_date
-        else:
-            st.session_state.show_details_of_session = None
-
-        nav.go_to_home()
+        # go back to select page, to offer more exercises be added
+        nav.go_to_select_exercises(st.session_state.workout_type, st.session_state.selected_date)
         
 def select_weight_and_reps():
 
@@ -113,3 +118,33 @@ def select_weight_and_reps():
     with st.container(horizontal=True):
         st.button(key="session_form_button", label="Done", on_click=next_exercise, args=(exercise, set_data))
         st.button("Cancel", on_click=nav.go_to_home)
+
+def show_currently_selected_exercises():
+
+    exercise_names = [
+    exercise["exercise_name"]
+    for exercise in st.session_state.results
+    ]
+
+    st.dataframe(
+        pd.DataFrame(exercise_names, columns=["Exercise"]),
+        use_container_width=True,
+        hide_index=True
+    )
+
+def submit_exercises():
+
+    jf_session.add_training_session(st.session_state.results, st.session_state.workout_type, st.session_state.selected_date)
+    
+    # after session is added update which session to show details of
+    # since it will most likely be this new one
+    
+    most_recent_session = jf_session.get_training_sessions(1, st.session_state.session_filter)
+    if len(most_recent_session)!=0:
+        most_recent_session_date = most_recent_session[0]["date"]
+        st.session_state.show_details_of_session = most_recent_session_date
+    else:
+        st.session_state.show_details_of_session = None
+
+    # go to home page after submission
+    nav.go_to_home()
